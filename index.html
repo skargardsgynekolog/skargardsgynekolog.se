@@ -19,6 +19,7 @@
     --paper:#FFFFFF;
   }
   *{box-sizing:border-box;}
+  html{overflow-x:hidden;}
   body{
     margin:0;
     background:var(--sand);
@@ -26,6 +27,8 @@
     font-family:'Karla',sans-serif;
     font-size:17px;
     line-height:1.65;
+    overflow-x:hidden;
+    width:100%;
   }
   h1,h2,h3{
     font-family:'Fraunces',serif;
@@ -49,9 +52,10 @@
   nav{
     display:flex;justify-content:space-between;align-items:center;
     max-width:960px;margin:0 auto;padding:22px 24px;
+    flex-wrap:wrap;gap:12px;
   }
   .logo{font-family:'Fraunces',serif;font-weight:600;font-size:20px;color:var(--teal);}
-  .navlinks{display:flex;gap:28px;list-style:none;margin:0;padding:0;}
+  .navlinks{display:flex;gap:28px;list-style:none;margin:0;padding:0;flex-wrap:wrap;}
   .navlinks a{color:var(--teal);text-decoration:none;font-weight:500;font-size:15px;}
   .navlinks a:hover{color:var(--coral-dark);}
 
@@ -77,7 +81,7 @@
   .btn-primary{background:var(--coral);color:var(--teal);}
   .btn-ghost{background:transparent;color:var(--sand);border:1.5px solid rgba(255,255,255,.5);}
 
-  .hero-dots{position:absolute;right:-40px;top:40px;z-index:1;opacity:.9;}
+  .hero-dots{position:absolute;right:-40px;top:40px;z-index:1;opacity:.9;max-width:none;pointer-events:none;}
 
   /* WAVE DIVIDER */
   .wave{display:block;width:100%;height:60px;margin-bottom:-2px;}
@@ -91,7 +95,7 @@
     display:flex;gap:36px;align-items:center;flex-wrap:wrap;
   }
   .about-figure > div{flex:1;min-width:260px;}
-  .islands{width:220px;flex-shrink:0;}
+  .islands{width:220px;max-width:100%;flex-shrink:0;}
 
   /* TOPIC LIST */
   .topics{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:14px;}
@@ -203,12 +207,19 @@
   footer{padding:36px 24px;text-align:center;font-size:14px;color:var(--teal-light);}
 
   @media (max-width:640px){
-    .hero h1{font-size:34px;}
-    .navlinks{gap:16px;font-size:13px;}
+    body{font-size:16px;}
+    .hero{padding:56px 20px 80px;}
+    .hero h1{font-size:30px;}
+    .hero p{font-size:16px;}
+    nav{padding:16px 20px;justify-content:center;text-align:center;}
+    .navlinks{gap:14px;font-size:13px;justify-content:center;}
     .contact-card{padding:30px 24px;flex-direction:column;text-align:center;}
-    .trust-row{grid-template-columns:repeat(2,1fr);}
+    .trust-row{grid-template-columns:repeat(2,1fr);padding:24px 20px;}
     .service-grid,.testi-grid{grid-template-columns:1fr;}
     .form-row{grid-template-columns:1fr;}
+    section{padding:50px 20px;}
+    .about-figure{flex-direction:column;align-items:flex-start;}
+    .quiz-shell,.booking-form{padding:24px 20px;}
   }
 </style>
 </head>
@@ -415,17 +426,17 @@ renderQuestion();
       <div class="testi-card">
         <div class="stars">★★★★★</div>
         <p>"Äntligen har Djurö en riktig gynekolog som tänker på personen."</p>
-        <div class="who">— Patient, Lärkan Djurö</div>
+        <div class="who">— Patient, Djurö</div>
       </div>
       <div class="testi-card">
         <div class="stars">★★★★★</div>
         <p>"Bokade tid samma vecka och blev bemött med värme och respekt."</p>
-        <div class="who">— Patient, Rebecca Stavsnäs</div>
+        <div class="who">— Placeholder, byt mot ett riktigt citat</div>
       </div>
       <div class="testi-card">
         <div class="stars">★★★★★</div>
         <p>"Äntligen en mottagning som pratar om kroppen utan krångel."</p>
-        <div class="who">— Patient, Mindy Djurö</div>
+        <div class="who">— Placeholder, byt mot ett riktigt citat</div>
       </div>
     </div>
   </div>
